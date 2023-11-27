@@ -4,13 +4,14 @@ public class CsoHenger extends TomorHenger {
 
     private double falvastagsag;
 
-    public CsoHenger(double falvastagsag, double fajsuly, double sugar, double magassag) {
-        super(fajsuly, sugar, magassag);
+    public CsoHenger(double sugar, double magassag, double falvastagsag) {
+        super(sugar, magassag);
         this.falvastagsag = falvastagsag;
     }
 
-    public CsoHenger(double fajsuly, double sugar, double magassag) {
-        super(fajsuly, sugar, magassag);
+    public CsoHenger(double sugar, double magassag, double fajSuly, double falvastagsag) {
+        super(sugar, magassag, fajSuly);
+        this.falvastagsag = falvastagsag;
     }
 
     public double getFalvastagsag() {
@@ -18,13 +19,17 @@ public class CsoHenger extends TomorHenger {
     }
 
     public double terfogat() {
+        double sugar = this.getSugar();
+        double belsoatmero = sugar - this.falvastagsag;
+        double magassag = this.getMagassag();
 
-        return 0;
+        return ((Math.PI * (sugar * sugar)) * this.getMagassag()) - ((Math.PI * (belsoatmero * belsoatmero)) * magassag);
     }
 
     @Override
     public String toString() {
-        return "CsoHenger{" + "falvastagsag=" + falvastagsag + '}';
+        String os = super.toString();
+        return os + "\n\tCsoHenger{" + "falvastagsag=" + falvastagsag + '}';
     }
 
 }

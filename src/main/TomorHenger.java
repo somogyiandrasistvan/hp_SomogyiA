@@ -4,13 +4,13 @@ public abstract class TomorHenger extends Henger {
 
     private double fajsuly;
 
-    public TomorHenger(double fajsuly, double sugar, double magassag) {
-        super(sugar, magassag);
-        this.fajsuly = fajsuly;
+    public TomorHenger(double sugar, double magassag) {
+        this(sugar, magassag, 1);
     }
 
-    public TomorHenger(double sugar, double magassag) {
+    public TomorHenger(double sugar, double magassag, double fajsuly) {
         super(sugar, magassag);
+        this.fajsuly = fajsuly;
     }
 
     public double getFajsuly() {
@@ -19,12 +19,13 @@ public abstract class TomorHenger extends Henger {
 
     public double suly() {
 
-        return 0;
+        return terfogat() * this.fajsuly;
     }
 
     @Override
     public String toString() {
-        return "TomorHenger{" + "fajsuly=" + fajsuly + '}';
+        String os = super.toString();
+        return os + "\n\tTomorHenger{" + "fajsuly=" + fajsuly + '}';
     }
 
 }
