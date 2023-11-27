@@ -24,7 +24,7 @@ public abstract class Henger {
 
     public double terfogat() {
 
-        return 0;
+        return Math.PI*sugar*2*magassag;
     }
 
     @Override
